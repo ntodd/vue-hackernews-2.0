@@ -1,0 +1,12 @@
+version: '2'
+volumes:
+  node_modules:
+services:
+  cli:
+    build: .
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: npm run dev
+    ports:
+      - "8080:8080"
